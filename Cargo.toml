@@ -1,5 +1,5 @@
 [package]
-name = "simple_c_api"
+name = "simple"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,7 +7,7 @@ edition = "2021"
 
 
 [lib]
-name = "simple_c_api"
+name = "simple"
 crate-type = ["cdylib"]
 
 [dependencies]

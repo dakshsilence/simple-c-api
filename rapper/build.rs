@@ -2,7 +2,8 @@ fn main() {
     // Tell cargo to invalidate the built crate whenever the wrapper changes
     println!("cargo:rerun-if-changed=../include/simple.h");
     println!("cargo:rerun-if-changed=build.rs");
-    println!("cargo:rustc-link-lib=simple_c_api");
+    println!("cargo:rustc-link-lib=simple");
+    println!("cargo:rustc-link-search=../target/debug/");
 
     // The bindgen::Builder is the main entry point
     // to bindgen, and lets you build up options for
