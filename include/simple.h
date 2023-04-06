@@ -9,6 +9,11 @@
 #include <stddef.h>
 #include <stdbool.h>
 
+typedef struct Buffer {
+  const unsigned char *ptr;
+  unsigned int size;
+} Buffer;
+
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
@@ -16,6 +21,10 @@ extern "C" {
 int32_t add(int32_t a, int32_t b);
 
 uint32_t get_random(void);
+
+struct Buffer get_random_number(uint32_t size);
+
+void free_buffer(struct Buffer buffer);
 
 #ifdef __cplusplus
 } // extern "C"
