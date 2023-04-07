@@ -1,18 +1,21 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-simple';
+import { StyleSheet, View, Button } from 'react-native';
+import {
+  getRandom,
+  getRandomBytes,
+  getRandomNumber,
+} from 'react-native-simple';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Button
+        title={'test'}
+        onPress={async () => {
+          console.log('Button Pressed', await getRandomBytes(3));
+        }}
+      />
     </View>
   );
 }

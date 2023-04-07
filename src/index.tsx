@@ -17,6 +17,14 @@ const Simple = NativeModules.Simple
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return Simple.multiply(a, b);
+export async function getRandom(): Promise<number> {
+  return await Simple.getRandom();
+}
+
+export async function getRandomNumber(n: number): Promise<string> {
+  return await Simple.getRandomNumber(n);
+}
+
+export async function getRandomBytes(n: number): Promise<string> {
+  return await Simple.getRandomBytes(n);
 }

@@ -22,16 +22,20 @@ public class SimpleModule extends ReactContextBaseJavaModule {
     return NAME;
   }
 
-  static {
-    System.loadLibrary("cpp");
-  }
-
-  private static native double nativeMultiply(double a, double b);
-
-  // Example method
-  // See https://reactnative.dev/docs/native-modules-android
   @ReactMethod
-  public void multiply(double a, double b, Promise promise) {
-    promise.resolve(nativeMultiply(a, b));
+  public void getRandom(Promise promise) {
+    promise.resolve(Native.Simple.getRandom());
   }
+
+  @ReactMethod
+  public void getRandomNumber(int n,Promise promise) {
+    promise.resolve(Native.Simple.getRandomString(n));
+  }
+
+  @ReactMethod
+  public void getRandomBytes(int n,Promise promise) {
+    // Log.d("Native.Simple.getRandomNumber(n)");
+    promise.resolve(Native.Simple.getRandomNumber(n));
+  }
+
 }
